@@ -161,7 +161,7 @@ class CubeSolver33:
             
             print "    state count:", now_count, reverse_count
             
-    def generate_corner_pos_table(self, filename):
+    def generate_table(self, filename, param1, param2):
         print "Start generate corner table."
         A = [self.STR_FINAL]
         D = {self.STR_FINAL: 0}
@@ -173,7 +173,7 @@ class CubeSolver33:
             r = []
             for exec_id in xrange(len(self.EXEC)):
                 current_state = eval(k)
-                next_state = self.action_part(current_state, exec_id, "corner", "pos")
+                next_state = self.action_part(current_state, exec_id, param1, param2)
                 str_next_state = str(next_state)
                 if (str_next_state in D):
                     r.append(D[str_next_state])
