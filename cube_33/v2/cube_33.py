@@ -187,7 +187,8 @@ class CubeSolver33:
             if (now % 1000 == 0):
                 print now
         f = open(filename,"wb")
-        cPickle.dump(R,f)
+        TABLE = {'D':D, 'R':R}
+        cPickle.dump(TABLE,f)
 #        R = cPickle.load(f)
         f.close()
         print "Finished, state count is", now
